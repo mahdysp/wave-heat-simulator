@@ -1,3 +1,4 @@
+
 """
 Wave & Heat Equation Simulator
 A Python GUI application for simulating 1D wave and heat equations.

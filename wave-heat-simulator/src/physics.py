@@ -295,7 +295,7 @@ class HeatDiffusion:
                 return t
             t += dt
         return None
-#by-mahdysp
+		#by-mahdysp
     def get_decay_constant(self, n=1):
         """Get the time constant τₙ for the n-th mode"""
         lambda_n = (n * np.pi / self.L) ** 2

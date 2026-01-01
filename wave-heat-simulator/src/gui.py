@@ -623,7 +623,7 @@ class SimulationGUI:
             ax.grid(True, alpha=0.3)
             if i == 0:
                 ax.legend(fontsize=7, loc='upper right')
-
+            #by-mahdysp
         self.fig.suptitle("D'Alembert Solution: u(x,t) = ½[F(x-ct) + F(x+ct)]",
                           fontsize=12, fontweight='bold')
         self.fig.tight_layout()
@@ -800,7 +800,7 @@ class SimulationGUI:
         ax2.set_xlabel('Time Constant τ₁ (seconds)')
         ax2.set_title('Thermal Time Constants')
         ax2.grid(True, alpha=0.3, axis='x')
-#by-mahdysp
+	#by-mahdysp
         self.fig.suptitle('Material Comparison', fontsize=14, fontweight='bold')
         self.fig.tight_layout()
         self.canvas.draw()

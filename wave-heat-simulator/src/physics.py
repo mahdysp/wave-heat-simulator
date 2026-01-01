@@ -206,7 +206,7 @@ class HeatDiffusion:
         """
         x = np.linspace(0, self.L, num_points)
         dx = x[1] - x[0]
-
+	#by-mahdysp
         if self.boundary_type == 'dirichlet' and (self.T_left != 0 or self.T_right != 0):
             f_vals = f(x) - self._steady_state_linear(x)
         else:

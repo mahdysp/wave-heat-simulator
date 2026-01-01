@@ -74,7 +74,7 @@ class SimulationGUI:
         menubar.add_cascade(label="Help", menu=help_menu)
         help_menu.add_command(label="About", command=self.show_about)
         help_menu.add_command(label="Documentation", command=self.show_docs)
-
+	#by-mahdysp
     def _create_main_layout(self):
         """Create main application layout"""
         self.main_container = ttk.Frame(self.root)
@@ -285,8 +285,8 @@ class SimulationGUI:
         ttk.Button(btn_frame, text="Plot", command=self.plot_heat).pack(side=tk.LEFT, padx=2)
         ttk.Button(btn_frame, text="Animate", command=self.animate_heat).pack(side=tk.LEFT, padx=2)
         ttk.Button(btn_frame, text="Stop", command=self.stop_animation).pack(side=tk.LEFT, padx=2)
-
-        # Analysis frame
+				
+        # Analysis frame	#by-mahdysp
         analysis_frame = ttk.LabelFrame(scrollable_frame, text="Analysis", padding=10)
         analysis_frame.pack(fill=tk.X, padx=5, pady=5)
         ttk.Button(analysis_frame, text="Compare Materials", command=self.compare_materials).pack(fill=tk.X, pady=2)
@@ -623,7 +623,7 @@ class SimulationGUI:
             ax.grid(True, alpha=0.3)
             if i == 0:
                 ax.legend(fontsize=7, loc='upper right')
-            #by-mahdysp
+
         self.fig.suptitle("D'Alembert Solution: u(x,t) = ½[F(x-ct) + F(x+ct)]",
                           fontsize=12, fontweight='bold')
         self.fig.tight_layout()
@@ -800,7 +800,7 @@ class SimulationGUI:
         ax2.set_xlabel('Time Constant τ₁ (seconds)')
         ax2.set_title('Thermal Time Constants')
         ax2.grid(True, alpha=0.3, axis='x')
-	#by-mahdysp
+
         self.fig.suptitle('Material Comparison', fontsize=14, fontweight='bold')
         self.fig.tight_layout()
         self.canvas.draw()
@@ -936,7 +936,7 @@ class SimulationGUI:
                     u = sim.solution(x, t)
                     f.write(f"{t:.4f}," + ",".join([f"{ui:.6f}" for ui in u]) + "\n")
             messagebox.showinfo("Success", f"Exported to {filename}")
-#by-mahdysp
+
     def export_json(self):
         """Export parameters to JSON"""
         filename = filedialog.asksaveasfilename(defaultextension=".json", filetypes=[("JSON", "*.json")])

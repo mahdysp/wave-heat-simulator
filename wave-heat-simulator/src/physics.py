@@ -41,7 +41,7 @@ class VibratingString:
 
     def compute_coefficients(self, f, g=None, num_points=1000):
         """
-        Compute Fourier coefficients from initial conditions.
+        Compute Fourier coefficient from initial conditions.
         
         Parameters:
             f: Initial displacement function f(x) = u(x, 0)

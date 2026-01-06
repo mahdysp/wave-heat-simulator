@@ -138,7 +138,7 @@ MIT License
 
 ## 👤 Author
 
-**M. Mahdy**
+**Mohamad Mahdy Sobhany poor**
 
 Python · Scientific Computing · GUI Development
 

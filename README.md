@@ -63,7 +63,6 @@ where:
 wave_heat_simulator/  
 ├── README.md  
 ├── LICENSE  
-├── .gitignore  
 ├── requirements.txt  
 └── src/  
 &nbsp;&nbsp;&nbsp;&nbsp;└── wave_heat_simulator/  

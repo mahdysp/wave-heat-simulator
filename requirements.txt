@@ -1,0 +1,17 @@
+# Core dependencies
+numpy>=1.19.0,<2.0.0
+matplotlib>=3.3.0,<4.0.0
+scipy>=1.5.0,<2.0.0
+
+# Optional dependencies for enhanced functionality
+# Uncomment if needed:
+# h5py>=3.0.0  # For HDF5 export
+# pandas>=1.2.0  # For enhanced data manipulation
+# pillow>=8.0.0  # For image processing
+
+# Development dependencies (optional)
+# pytest>=6.0.0
+# pytest-cov>=2.10.0
+# black>=21.0
+# flake8>=3.9.0
+# mypy>=0.900

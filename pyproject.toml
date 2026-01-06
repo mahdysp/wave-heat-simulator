@@ -1,0 +1,156 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pde-fourier-simulator"
+version = "1.0.0"
+description = "Interactive PDE solver for wave and heat equations using Fourier series"
+readme = "README.md"
+authors = [
+    {name = "Your Name", email = "your.email@example.com"}
+]
+license = {text = "MIT"}
+classifiers = [
+    "Development Status :: 5 - Production/Stable",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Physics",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.7",
+    "Programming Language :: Python :: 3.8",
+    "Programming Language :: Python :: 3.9",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+]
+keywords = ["pde", "physics", "simulation", "fourier", "wave-equation", "heat-equation"]
+requires-python = ">=3.7"
+dependencies = [
+    "numpy>=1.19.0,<2.0.0",
+    "matplotlib>=3.3.0,<4.0.0",
+    "scipy>=1.5.0,<2.0.0",
+]
+
+[project.optional-dependencies]
+dev = [
+    "pytest>=6.0.0",
+    "pytest-cov>=2.10.0",
+    "black>=21.0",
+    "flake8>=3.9.0",
+    "mypy>=0.900",
+    "sphinx>=4.0.0",
+    "sphinx-rtd-theme>=1.0.0",
+]
+export = [
+    "h5py>=3.0.0",
+    "pandas>=1.2.0",
+]
+all = [
+    "pde-fourier-simulator[dev]",
+    "pde-fourier-simulator[export]",
+]
+
+[project.urls]
+Homepage = "https://github.com/yourusername/pde-fourier-simulator"
+Documentation = "https://pde-fourier-simulator.readthedocs.io"
+Repository = "https://github.com/yourusername/pde-fourier-simulator.git"
+"Bug Tracker" = "https://github.com/yourusername/pde-fourier-simulator/issues"
+Changelog = "https://github.com/yourusername/pde-fourier-simulator/blob/main/CHANGELOG.md"
+
+[project.scripts]
+pde-simulator = "main:main"
+pde-sim = "main:main"
+
+[project.gui-scripts]
+pde-gui = "main:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+packages = ["physics", "gui", "utils"]
+
+[tool.setuptools.package-data]
+"*" = ["*.txt", "*.md", "*.json", "*.yaml"]
+
+[tool.pytest.ini_options]
+minversion = "6.0"
+addopts = "-ra -q --strict-markers"
+testpaths = [
+    "tests",
+]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+
+[tool.coverage.run]
+source = ["src"]
+omit = ["*/tests/*", "*/test_*.py"]
+
+[tool.coverage.report]
+exclude_lines = [
+    "pragma: no cover",
+    "def __repr__",
+    "if self.debug:",
+    "raise AssertionError",
+    "raise NotImplementedError",
+    "if 0:",
+    "if __name__ == .__main__.:",
+    "if TYPE_CHECKING:",
+]
+
+[tool.black]
+line-length = 88
+target-version = ['py37', 'py38', 'py39', 'py310', 'py311']
+include = '\.pyi?$'
+extend-exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | _build
+  | buck-out
+  | build
+  | dist
+)/
+'''
+
+[tool.isort]
+profile = "black"
+line_length = 88
+multi_line_output = 3
+include_trailing_comma = true
+force_grid_wrap = 0
+use_parentheses = true
+ensure_newline_before_comments = true
+
+[tool.mypy]
+python_version = "3.7"
+warn_return_any = true
+warn_unused_configs = true
+disallow_untyped_defs = false
+ignore_missing_imports = true
+files = ["src"]
+
+[tool.flake8]
+max-line-length = 88
+extend-ignore = ["E203", "W503"]
+exclude = [
+    ".git",
+    "__pycache__",
+    "docs/source/conf.py",
+    "old",
+    "build",
+    "dist",
+]
+
+[tool.pylint]
+max-line-length = 88
+disable = [
+    "C0111",  # missing-docstring
+    "C0103",  # invalid-name
+    "R0903",  # too-few-public-methods
+    "R0913",  # too-many-arguments
+    "W0212",  # protected-access
+]

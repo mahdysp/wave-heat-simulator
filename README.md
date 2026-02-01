@@ -1,5 +1,5 @@
 # 🌊🔥 Wave & Heat Equation Simulator
-
+ 
 A Python-based graphical simulator for the **one-dimensional Wave Equation** and **Heat Equation**,  
 implemented using **analytical Fourier series solutions** and visualized through an interactive **Tkinter GUI**.
 
